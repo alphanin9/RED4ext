@@ -17,13 +17,13 @@ Hook<decltype(&_CBaseEngine_LoadScripts)> CBaseEngine_LoadScripts(Hashes::CBaseE
 bool _CBaseEngine_LoadScripts(RED4ext::CBaseEngine* aEngine, const RED4ext::CString& aPath, uint64_t aTimestamp,
                               uint64_t a4)
 {
-    auto scriptCompilationSystem = App::Get()->GetScriptCompilationSystem();
+    /*auto scriptCompilationSystem = App::Get()->GetScriptCompilationSystem();
     const auto& scriptsBlobPath =
         scriptCompilationSystem->HasModdedScriptsBlob() ? scriptCompilationSystem->GetModdedScriptsBlob().string()
         : scriptCompilationSystem->HasScriptsBlob()     ? scriptCompilationSystem->GetScriptsBlob().string()
                                                         : aPath;
-
-    return CBaseEngine_LoadScripts(aEngine, scriptsBlobPath, aTimestamp, a4);
+*/
+    return CBaseEngine_LoadScripts(aEngine, aPath, aTimestamp, a4);
 }
 } // namespace
 
